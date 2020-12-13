@@ -1,3 +1,4 @@
+import user.dao.DUserDao;
 import user.dao.UserDao;
 import user.domain.User;
 
@@ -5,7 +6,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        UserDao dao = new UserDao();
+        UserDao dao = new DUserDao();
         dao.init();
 
         User user = new User();

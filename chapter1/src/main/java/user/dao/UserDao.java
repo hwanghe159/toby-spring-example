@@ -4,7 +4,7 @@ import user.domain.User;
 
 import java.sql.*;
 
-public class UserDao {
+public abstract class UserDao {
 
     public void init() throws ClassNotFoundException, SQLException {
         Connection c = getConnection();
@@ -61,8 +61,5 @@ public class UserDao {
         return user;
     }
 
-    private Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
-    }
+    public abstract Connection getConnection() throws ClassNotFoundException, SQLException;
 }
